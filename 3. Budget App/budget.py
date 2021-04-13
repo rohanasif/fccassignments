@@ -88,4 +88,4 @@ def create_spend_chart(categories):
         if i < longest_name_length - 1:
             graph += "\n     "
 
-    return (graph)
+    return graph
