@@ -3,8 +3,8 @@ class Category:
         self.name = name
         self.ledger = []
 
-    def withdraw(self, amount, description=""):
-        if self.check_funds(amount):
+    def withdraw(self, amount, description=""):  # description="" to default to empty string
+        if self.check_funds(amount):  # if withdrawal is possible
             self.ledger.append({"amount": -amount, "description": description})
             return True
         else:
@@ -13,7 +13,7 @@ class Category:
     def deposit(self, amount, description=""):
         self.ledger.append({"amount": amount, "description": description})
 
-    def get_balance(self):
+    def get_balance(self):  # get the total amounts for all categories
         total = 0
         for item in self.ledger:
             total += item['amount']
@@ -28,7 +28,7 @@ class Category:
             return False
 
     def check_funds(self, amount):
-        if amount <= self.get_balance():
+        if amount <= self.get_balance():  # to check if provided amount is less than total balance
             return True
         else:
             return False

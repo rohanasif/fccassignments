@@ -1,6 +1,7 @@
 import copy
 import random
 
+
 class Hat:
     def __init__(self, **kwargs):
         self.contents = []
@@ -15,6 +16,7 @@ class Hat:
             index = random.randint(0, len(self.contents)-1)
             balls.append(self.contents.pop(index))
         return balls
+
 
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     successes = 0
